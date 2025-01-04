@@ -19,8 +19,8 @@ project/ ├── backend/ │ ├── app/ │ │ └── ... │ ├─�
     ```bash
     cd backend
     python -m venv venv
-    source venv/bin/activate  # (Linux/Mac)
-# or venv\Scripts\activate (Windows)
+    source venv/bin/activate  # (Linux/Mac) or venv\Scripts\activate (Windows)
+    
     pip install -r requirements.txt
     python run.py
 Flask should be available at http://127.0.0.1:5000.
