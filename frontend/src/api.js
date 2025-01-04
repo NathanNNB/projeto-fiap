@@ -1,18 +1,17 @@
 import axios from 'axios';
 
-// Base URL do Flask local:
 const API = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api',
+  baseURL: 'http://127.0.0.1:5000/api', 
 });
 
-// Exemplo de requisição GET
-export const fetchHello = async () => {
-  const response = await API.get('/hello');
+export const fetchHello = async (query) => {
+  const response = await API.get('/hello', {
+    params: { query },
+  });
   return response.data;
 };
 
-// Exemplo de requisição POST
-export const sendData = async (payload) => {
-  const response = await API.post('/data', payload);
+export const sendData = async (data) => {
+  const response = await API.post('/data', data);
   return response.data;
 };

@@ -1,38 +1,48 @@
+
 import { useState } from 'react';
-import { fetchHello, sendData } from './api';
+import { fetchHello } from './api'; 
+import './App.css'; 
 
 const App = () => {
-  const [helloMessage, setHelloMessage] = useState('');
-  const [postResponse, setPostResponse] = useState(null);
+  const [inputValue, setInputValue] = useState('');
 
-  const handleHello = async () => {
-    try {
-      const data = await fetchHello();
-      setHelloMessage(data.message);
-    } catch (error) {
-      console.error(error);
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleFetchHello = async () => {
+    if (!inputValue.trim()) {
+      setError('O campo não pode estar vazio.');
+      setResult(null);
+      return;
     }
-  };
-
-  const handleSendData = async () => {
+    setError(null);
     try {
-      const dataToSend = { nome: 'Fulano', idade: 25 };
-      const response = await sendData(dataToSend);
-      setPostResponse(response);
-    } catch (error) {
-      console.error(error);
+      const data = await fetchHello(inputValue);
+      setResult(data);
+    } catch {
+      setError('Erro ao consultar a API.');
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Integração Flask + React</h1>
       
-      <button onClick={handleHello}>GET /api/hello</button>
-      {helloMessage && <p>Resposta GET: {helloMessage}</p>}
-      
-      <button onClick={handleSendData}>POST /api/data</button>
-      {postResponse && <pre>{JSON.stringify(postResponse, null, 2)}</pre>}
+      <input
+        type="text"
+        placeholder="Digite algo..."
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+
+      <button onClick={handleFetchHello}>Buscar Hello (GET)</button>
+
+      {error && <div className="message error">{error}</div>}
+      {result && (
+        <div className="message success">
+          <pre>{JSON.stringify(result, null, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 };
