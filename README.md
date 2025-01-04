@@ -28,6 +28,7 @@ Flask should be available at http://127.0.0.1:5000.
 ### 2. Frontend (React)
 
 1. Go to the `frontend` folder:  
+    ```bash
     cd ../frontend
     yarn install
     yarn run dev
