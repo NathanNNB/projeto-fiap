@@ -45,3 +45,15 @@ The Flask API exposes the following endpoints by default (examples):
 
 GET /api/hello
 POST /api/data
+
+### 4. Swagger
+
+Swagger/OpenAPI Documentation
+
+This project includes **Swagger (OpenAPI)** documentation using [Flasgger](https://github.com/flasgger/flasgger). Swagger provides an interactive UI to explore and test API endpoints.
+
+#### How to Access
+Start the Flask app (e.g., python run.py).
+
+Open your browser and visit:
+http://127.0.0.1:5000/apidocs
