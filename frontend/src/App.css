@@ -81,7 +81,7 @@ body {
 /* Container principal */
 .container {
   width: 90%;
-  max-width: 600px;
+  max-width: 1024px;
   margin: 40px auto;
   background-color: var(--container-bg);
   border-radius: 8px;
