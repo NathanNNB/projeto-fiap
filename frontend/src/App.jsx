@@ -3,6 +3,9 @@ import Tabs from "./components/Tabs"; // Importa o componente Tabs
 import {
   fetchProductionByYear,
 } from "./services/production";
+import {
+  fetchComerceByYear,
+} from "./services/comerce";
 import "./App.css";
 
 const App = () => {
@@ -39,7 +42,7 @@ const App = () => {
               <Section
                 title="Buscar Comercialização"
                 placeholder="Digite o ano..."
-                handler={fetchProductionByYear}
+                handler={fetchComerceByYear}
               />
             ),
           },
