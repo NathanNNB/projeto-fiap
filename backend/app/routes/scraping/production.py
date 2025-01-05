@@ -1,8 +1,9 @@
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
+from app.routes.routes import URL
+from app.services.scraping_service import scrape_page
 
-URL_1 = "http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_02"
-url_2 = "http://vitibrasil.cnpuv.embrapa.br/index.php?ano=1970&opcao=opt_02"
+PRODUCTION_PARAM = 'opcao=opt_02' 
 
 production = Blueprint('production', __name__)
 
@@ -12,5 +13,20 @@ def hello():
 
 @production.route('/api/production/production', methods=['GET'])
 def getProducao():
-    return jsonify({"message": "Production"})
+    productionURL = URL
+    params = PRODUCTION_PARAM
+
+    year = request.args.get('year', default='', type=str)
+    if year:
+        yearParameter = f"?ano={year}"
+        productionURL = f"{productionURL}{yearParameter}"
+        params = f"{params}{yearParameter}"
+
+    productionURL = f"{productionURL}?{PRODUCTION_PARAM}" 
+    
+    data = scrape_page(productionURL, params)
+    if "error" in data:
+        return data
+
+    return jsonify({"message": str(data)})
 

@@ -10,11 +10,6 @@ const App = () => {
   const [error, setError] = useState(null);
 
   const handleFetchHello = async () => {
-    if (!inputValue.trim()) {
-      setError('O campo não pode estar vazio.');
-      setResult(null);
-      return;
-    }
     setError(null);
     try {
       const data = await fetchHello(inputValue);
@@ -26,7 +21,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Integração Flask + React</h1>
+      <h1>Consulta aos dados da Embrapa</h1>
       
       <input
         type="text"

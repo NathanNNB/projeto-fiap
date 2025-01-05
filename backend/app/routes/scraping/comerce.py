@@ -1,5 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
+from app.routes.routes import URL
+COMERCE_PARAM = 'opcao=opt_04' 
 
 comerce = Blueprint('comerce', __name__)
 
