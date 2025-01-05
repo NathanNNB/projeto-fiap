@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
 
-
 main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
@@ -29,7 +28,7 @@ def index():
 def hello():
     return jsonify({"message": "Olá, Flask!"})
 
-@main.route('/api/data', methods=['POST'])
-def data():
-    content = request.json
-    return jsonify({"received_data": content})
+@main.route('/api/production', methods=['GET'])
+def getProducao():
+    return jsonify({"message": "Production"})
+
