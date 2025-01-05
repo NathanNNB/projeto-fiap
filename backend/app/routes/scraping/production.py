@@ -20,13 +20,16 @@ def getProducao():
     if year:
         yearParameter = f"?ano={year}"
         productionURL = f"{productionURL}{yearParameter}"
-        params = f"{params}{yearParameter}"
+        params = f"{params}{year}"
 
-    productionURL = f"{productionURL}?{PRODUCTION_PARAM}" 
+    if 1970 < int(year) > 2023:
+        return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
+
+    productionURL = f"{productionURL}&{PRODUCTION_PARAM}" 
     
     data = scrape_page(productionURL, params)
     if "error" in data:
         return data
-
+    print(data)
     return jsonify({"message": str(data)})
 

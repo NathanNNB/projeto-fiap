@@ -4,17 +4,19 @@ from bs4 import BeautifulSoup
 from app.utils.htmlUtils import htmlToDF, create_html_file, read_defaultData
 
 def scrape_page(url, params):
+    soup = None
     try:
         response = requests.get(url, timeout=5)
         response.raise_for_status()  
+        soup = BeautifulSoup(response.text, 'html.parser')
     except requests.exceptions.RequestException as e:
         print(f"Erro ao acessar a URL :{url}")
         localSoup = read_defaultData(params)
         if not localSoup:
             print(f"Not able to access content at URL {url} or in local file")
             return {f"error': 'Not able to access content at URL {url} or in local file"}
+        soup = localSoup
 
-    soup = BeautifulSoup(response.text, 'html.parser')
     if not soup:
         localSoup = read_defaultData(params)
 

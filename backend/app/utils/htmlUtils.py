@@ -46,6 +46,7 @@ def read_defaultData(fileName):
     file_path = f"{target_dir}/{fileName}"
     try:
         # 1. Abrir o arquivo e ler o conteúdo
+        file_path += ".html" 
         with open(file_path, 'r', encoding='utf-8') as file:
             html_content = file.read()
         
