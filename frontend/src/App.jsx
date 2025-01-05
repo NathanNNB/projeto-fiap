@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { fetchHello } from './api'; 
+import { fetchHello } from './services/api'; 
 import './App.css'; 
 
 const App = () => {

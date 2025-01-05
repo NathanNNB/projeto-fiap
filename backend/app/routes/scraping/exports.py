@@ -3,11 +3,11 @@ from flasgger import swag_from
 
 exports = Blueprint('exports', __name__)
 
-@exports.route('/exports/hello', methods=['GET'])
+@exports.route('/api/exports', methods=['GET'])
 def hello():
     return jsonify({"message": "Olá, exports!"})
 
-@exports.route('/exports/exports', methods=['GET'])
+@exports.route('/api/exports/exports', methods=['GET'])
 def getProducao():
     return jsonify({"message": "exports"})
 
