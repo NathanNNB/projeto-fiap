@@ -57,3 +57,7 @@ Start the Flask app (e.g., python run.py).
 
 Open your browser and visit:
 http://127.0.0.1:5000/apidocs
+
+### Resource 
+
+http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01

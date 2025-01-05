@@ -1,83 +1,153 @@
+/* 
+  1) Define CSS variables for colors, spacing, etc.
+  2) Provide default (light) values.
+  3) Create a .dark-theme class to override those variables.
+*/
+
 /* Reset básico para remover margens e padding padrão */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Fonte base */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1; /* Fundo suave */
-    color: #333;
-  }
-  
-  /* Container principal */
-  .container {
-    width: 90%;
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-  }
-  
-  /* Título */
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Botões */
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 16px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin: 8px 0;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Input */
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-  
-  /* Mensagens de resultado e erro */
-  .message {
-    margin-top: 16px;
-    padding: 10px;
-    border-radius: 4px;
-  }
-  
-  .message.success {
-    background-color: #d4edda;
-    color: #155724;
-  }
-  
-  .message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
-  /* Tabela ou bloco de JSON */
-  pre {
-    background-color: #f8f9fa;
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    overflow-x: auto;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====================== */
+/* Default (Light) Theme  */
+/* ====================== */
+
+:root {
+  /* Colors */
+  --body-bg-color: #f1f1f1;      /* fundo suave */
+  --text-color: #333;            /* texto principal */
+  --container-bg: #fff;          /* fundo do container */
+  --container-shadow: rgba(0, 0, 0, 0.1);
+
+  --button-bg: #007bff;
+  --button-text-color: #fff;
+  --button-hover-bg: #0056b3;
+
+  --input-border-color: #ccc;
+  --input-bg: #fff;
+  --input-text-color: #333;
+
+  --message-success-bg: #d4edda;
+  --message-success-text: #155724;
+  --message-error-bg: #f8d7da;
+  --message-error-text: #721c24;
+
+  --pre-bg: #f8f9fa;
+  --pre-border-color: #ddd;
+}
+
+/* ====================== */
+/* Dark Theme Overrides   */
+/* ====================== */
+
+/* 
+  Use a class name like .dark-theme on <body> or any container 
+  to switch variables to dark mode.
+*/
+.dark-theme {
+  --body-bg-color: #1e1e1e;
+  --text-color: #ccc;
+  --container-bg: #2d2d2d;
+  --container-shadow: rgba(0, 0, 0, 0.7);
+
+  --button-bg: #555;
+  --button-text-color: #eee;
+  --button-hover-bg: #777;
+
+  --input-border-color: #444;
+  --input-bg: #3a3a3a;
+  --input-text-color: #ccc;
+
+  --message-success-bg: #273f2f;
+  --message-success-text: #a4f7bb;
+  --message-error-bg: #532b2c;
+  --message-error-text: #f7c8c9;
+
+  --pre-bg: #2a2a2a;
+  --pre-border-color: #444;
+}
+
+/* Global body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container principal */
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px var(--container-shadow);
+  padding: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Botões */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 8px 0;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Input */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-bg);
+  color: var(--input-text-color);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mensagens de resultado e erro */
+.message {
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message.success {
+  background-color: var(--message-success-bg);
+  color: var(--message-success-text);
+}
+
+.message.error {
+  background-color: var(--message-error-bg);
+  color: var(--message-error-text);
+}
+
+/* Tabela ou bloco de JSON */
+pre {
+  background-color: var(--pre-bg);
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--pre-border-color);
+  overflow-x: auto;
+  transition: background-color 0.3s, border-color 0.3s;
+}

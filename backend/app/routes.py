@@ -10,7 +10,22 @@ def index():
     return "Olá, este é o endpoint raiz!"
 
 @main.route('/api/hello', methods=['GET'])
-@swag_from('../docs/hello.yml')
+@swag_from({
+    'tags': ['Hello'],
+    'description': 'Endpoint que retorna uma saudação.',
+    'responses': {
+        200: {
+            'description': 'Sucesso',
+            'content': {
+                'application/json': {
+                    'example': {
+                        'message': 'Hello, Flask!'
+                    }
+                }
+            }
+        }
+    }
+})
 def hello():
     return jsonify({"message": "Olá, Flask!"})
 
