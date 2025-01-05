@@ -6,7 +6,7 @@ export const API = axios.create({
 
 export const fetchHello = async (query) => {
   const response = await API.get('/processing', {
-    params: { query },
+    params: { year: query },
   });
   return response.data;
 };

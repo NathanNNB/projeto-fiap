@@ -28,7 +28,8 @@ def index():
 def hello():
     return jsonify({"message": "Olá, Flask!"})
 
-@main.route('/api/production', methods=['GET'])
+@main.route('/api/processing', methods=['GET'])
 def getProducao():
-    return jsonify({"message": "Production"})
+    query = request.args.get('year', default='', type=int)
+    return jsonify({"message": query})
 
