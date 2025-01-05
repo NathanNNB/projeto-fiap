@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { fetchHello } from './services/api'; 
+import {fetchProductionByYear} from './services/production'
 import './App.css'; 
 
 const App = () => {
@@ -9,10 +9,10 @@ const App = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleFetchHello = async () => {
+  const handleFetchProduction = async () => {
     setError(null);
     try {
-      const data = await fetchHello(inputValue);
+      const data = await fetchProductionByYear(inputValue);
       setResult(data);
     } catch {
       setError('Erro ao consultar a API.');
@@ -30,7 +30,7 @@ const App = () => {
         onChange={(e) => setInputValue(e.target.value)}
       />
 
-      <button onClick={handleFetchHello}>Buscar Hello (GET)</button>
+      <button onClick={handleFetchProduction}>Buscar ano de produção (GET)</button>
 
       {error && <div className="message error">{error}</div>}
       {result && (

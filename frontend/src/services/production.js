@@ -11,7 +11,7 @@ export const fetchProductionIndex = async (query) => {
 
 export const fetchProductionByYear = async (query) => {
     const response = await API_URL.get('/production', {
-      params: { query },
+      params: { year: query },
     });
     return response.data;
   };
