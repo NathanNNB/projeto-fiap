@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import "./JsonTable.css"
 const JsonTable = ({ data }) => {
   let parsedData;
 
