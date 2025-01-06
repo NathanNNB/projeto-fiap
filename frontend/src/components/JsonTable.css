@@ -1,11 +1,12 @@
 .json-table-container {
     margin-top: 20px;
     padding: 10px;
-    background-color:rgb(0, 0, 0);
+    background-color: #1e1e2f; /* Fundo escuro do container */
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #444; /* Bordas mais suaves */
     max-width: 100%;
     overflow-x: auto;
+    color: #ffffff; /* Texto padrão branco */
   }
   
   table {
@@ -16,24 +17,24 @@
   
   th, td {
     padding: 8px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #555; /* Bordas mais escuras */
   }
   
   th {
-    background-color: #007bff;
-    color: white;
+    background-color: #007bff; /* Fundo azul para cabeçalhos */
+    color: #ffffff; /* Texto branco */
   }
   
   tr:nth-child(even) {
-    background-color:rgb(0, 0, 0);
+    background-color: #2c2c3a; /* Fundo alternado para linhas pares */
   }
   
   tr:hover {
-    background-color:rgb(14, 82, 116);
+    background-color: #3b3b4c; /* Fundo ao passar o mouse */
   }
   
   .error-message {
-    color: red;
+    color: #ff6b6b; /* Vermelho suave para mensagens de erro */
     font-weight: bold;
     margin-top: 20px;
   }
