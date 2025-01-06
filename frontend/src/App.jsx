@@ -27,7 +27,7 @@ const App = () => {
             ),
           },
           {
-            label: "Processamento por Ano e Classificação",
+            label: "Processamento",
             content: (
               <Section
                 title="Buscar Processamento por Ano e Classificação"
@@ -64,7 +64,7 @@ const App = () => {
             label: "Importação",
             content: (
               <Section
-                title="Buscar Importação por Ano"
+                title="Buscar Importação por Ano e Classificação"
                 inputs={[
                   { name: "year", placeholder: "Digite o ano", type: "number" },
                   {
@@ -87,7 +87,7 @@ const App = () => {
             label: "Exportação",
             content: (
               <Section
-                title="Buscar Produção por Ano"
+                title="Buscar Produção por Ano e Classificação"
                 inputs={[
                   { name: "year", placeholder: "Digite o ano", type: "number" }, 
                   {

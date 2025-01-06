@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Section.css" ;
+import JsonTable from "./JSONTable";
 const Section = ({ title, inputs = [], handler }) => {
   const [formData, setFormData] = useState(
     inputs.reduce((acc, input) => ({ ...acc, [input.name]: "" }), {})
@@ -57,7 +58,7 @@ const Section = ({ title, inputs = [], handler }) => {
       {error && <div className="message error">{error}</div>}
       {result && (
         <div className="message success">
-          <pre>{JSON.stringify(result, null, 2)}</pre>
+         <JsonTable data={result}/>
         </div>
       )}
     </div>
