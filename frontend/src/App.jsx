@@ -21,18 +21,32 @@ const App = () => {
             content: (
               <Section
                 title="Buscar Produção por Ano"
-                placeholder="Digite o ano..."
+                inputs={[
+                  { name: "year", placeholder: "Digite o ano", type: "number" } // Input para ano
+                ]}
                 handler={fetchProductionByYear}
               />
             ),
           },
           {
-            label: "Processamento",
+            label: "Processamento por Ano e Classificação",
             content: (
               <Section
-                title="Buscar Processamento"
-                placeholder="Digite o ano..."
-                handler={fetchProductionByYear}
+                title="Buscar Processamento por Ano e Classificação"
+                inputs={[
+                  { name: "year", placeholder: "Digite o ano", type: "number" },
+                  {
+                    name: "classification",
+                    type: "select",
+                    options: [
+                      { value: "subopt_01", label: "Viníferas" },
+                      { value: "subopt_02", label: "Americanas e híbridas" },
+                      { value: "subopt_03", label: "Uvas de mesa" },
+                      { value: "subopt_04", label: "Sem classificação" },
+                    ],
+                  },
+                ]}
+                handler={fetchComerceByYear}
               />
             ),
           },
@@ -40,8 +54,10 @@ const App = () => {
             label: "Comercialização",
             content: (
               <Section
-                title="Buscar Comercialização"
-                placeholder="Digite o ano..."
+                title="Buscar Comercialização por Ano"
+                inputs={[
+                  { name: "year", placeholder: "Digite o ano", type: "number" } // Input para ano
+                ]}
                 handler={fetchComerceByYear}
               />
             ),
@@ -50,8 +66,21 @@ const App = () => {
             label: "Importação",
             content: (
               <Section
-                title="Buscar Importação"
-                placeholder="Digite o ano..."
+                title="Buscar Importação por Ano"
+                inputs={[
+                  { name: "year", placeholder: "Digite o ano", type: "number" },
+                  {
+                    name: "classification",
+                    type: "select",
+                    options: [
+                      { value: "subopt_01", label: "Vinhos de Mesa" },
+                      { value: "subopt_02", label: "Espumantes" },
+                      { value: "subopt_03", label: "Uvas Frescas" },
+                      { value: "subopt_04", label: "Uvas passas" },
+                      { value: "subopt_05", label: "Sucos de Uva" }
+                    ],
+                  },
+                ]}
                 handler={fetchProductionByYear}
               />
             ),
@@ -60,8 +89,20 @@ const App = () => {
             label: "Exportação",
             content: (
               <Section
-                title="Buscar Exportação"
-                placeholder="Digite o ano..."
+                title="Buscar Produção por Ano"
+                inputs={[
+                  { name: "year", placeholder: "Digite o ano", type: "number" }, // Input para ano
+                  {
+                    name: "classification",
+                    type: "select",
+                    options: [
+                      { value: "subopt_01", label: "Vinhos de Mesa" },
+                      { value: "subopt_02", label: "Espumantes" },
+                      { value: "subopt_03", label: "Uvas Frescas" },
+                      { value: "subopt_04", label: "Sucos de Uva" },
+                    ],
+                  },
+                ]}
                 handler={fetchProductionByYear}
               />
             ),

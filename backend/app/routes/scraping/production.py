@@ -3,7 +3,7 @@ from flasgger import swag_from
 from app.routes.routes import URL
 from app.services.scraping_service import scrape_page
 
-PRODUCTION_PARAM = 'opcao=opt_04' 
+PRODUCTION_PARAM = 'opcao=opt_02' 
 
 production = Blueprint('production', __name__)
 
@@ -26,6 +26,5 @@ def getProducao():
     data = scrape_page(productionURL, params)
     if "error" in data:
         return data
-    print(data)
     return jsonify({"message": str(data)})
 
