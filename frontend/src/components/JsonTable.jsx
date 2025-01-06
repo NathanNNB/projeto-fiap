@@ -9,7 +9,7 @@ const JsonTable = ({ data }) => {
   } catch{
     return (
       <div className="error-message">
-        Erro ao processar os dados fornecidos. Verifique o formato do JSON.
+        Erro ao processar os dados fornecidos.{data.message}.
       </div>
     );
   }
@@ -18,7 +18,7 @@ const JsonTable = ({ data }) => {
   if (!Array.isArray(parsedData) || !parsedData.every((item) => typeof item === "object")) {
     return (
       <div className="error-message">
-        Dados inválidos. O campo `message` deve conter um array de objetos.
+        Serviço indisponível: {data.message}.
       </div>
     );
   }

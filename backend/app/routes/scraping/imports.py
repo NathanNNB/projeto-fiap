@@ -14,12 +14,10 @@ def getImports():
 
     year = request.args.get('year', default='', type=str)
     classification = request.args.get('classification', default='', type=str)
-    if year or classification:
-        importsURL = f"{importsURL}?"
 
     if year:
-        if 1970 < int(year) > 2023:
-            return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
+        if not 1970 <= int(year) <= 2023:
+            return jsonify({"message": "{Invalid Year, use a value between 1970 and 2023}"})
         yearParameter = f"ano={year}&"
         importsURL = f"{importsURL}{yearParameter}"
         params = f"{params}{year}"

@@ -14,12 +14,10 @@ def getExports():
 
     year = request.args.get('year', default='', type=str)
     classification = request.args.get('classification', default='', type=str)
-    if year or classification:
-        exportsURL = f"{exportsURL}?"
 
     if year:
-        if 1970 < int(year) > 2023:
-            return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
+        if not 1970 <= int(year) <= 2023:
+            return jsonify({"message": "{Invalid Year, use a value between 1970 and 2023}"})
         yearParameter = f"ano={year}&"
         exportsURL = f"{exportsURL}{yearParameter}"
         params = f"{params}{year}"
