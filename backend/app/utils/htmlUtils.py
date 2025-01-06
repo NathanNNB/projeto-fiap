@@ -61,3 +61,29 @@ def read_defaultData(fileName):
     except Exception as e:
         print(f"Error reading the file: {e}")
         return None
+    
+def transformDf(htmlTable):
+    if htmlTable is None:
+        return None
+
+    data = []
+    current_category = None  # Para rastrear o item atual
+
+    # 'htmlTable' é uma lista (ResultSet) de elementos <tr>.
+    for row in htmlTable:
+        # Encontrar todas as células da linha (th ou td)
+        cells = row.find_all(['th', 'td'])
+        cells_text = [cell.get_text(strip=True) for cell in cells]
+        cell_classes = [cell.get("class", []) for cell in cells][0]
+        print(cell_classes)
+        # Verificar se a linha é um "item" ou "subitem"
+        if "tb_item" in cell_classes:  # Substitua "item-class" pela classe ou lógica que define o item
+            current_category = cells_text[0]  # Defina o nome do item como a primeira célula (ajuste conforme necessário)
+        elif "tb_subitem" in cell_classes:  # Substitua "subitem-class" pela lógica para subitens
+            if current_category:  # Só adiciona se já houver um item atual
+                data.append([current_category] + cells_text)
+    # Criar DataFrame com a primeira coluna sendo 'Categoria'
+    print(len(data[0]))
+    df = pd.DataFrame(data, columns= [f"Coluna_{i}" for i in range(0, len(data[0]))]) if data else pd.DataFrame()
+    data_as_list = df.to_dict(orient="records")
+    return data_as_list
