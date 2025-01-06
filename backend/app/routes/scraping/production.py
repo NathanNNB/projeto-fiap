@@ -21,7 +21,7 @@ def getProduction():
         params = f"{params}{year}"
 
 
-    productionURL = f"{productionURL}&{PRODUCTION_PARAM}" 
+    productionURL = f"{productionURL}?{PRODUCTION_PARAM}" 
     print(productionURL)
     data = scrape_page(productionURL, params)
     if "error" in data:

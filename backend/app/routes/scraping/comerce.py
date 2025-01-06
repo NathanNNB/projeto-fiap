@@ -21,7 +21,7 @@ def getComerce():
         params = f"{params}{year}"
 
 
-    comerceURL = f"{comerceURL}&{COMERCE_PARAM}" 
+    comerceURL = f"{comerceURL}?{COMERCE_PARAM}" 
     
     data = scrape_page(comerceURL, params)
     if "error" in data:
