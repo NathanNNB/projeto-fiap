@@ -4,6 +4,7 @@ import { fetchProductionByYear } from "./services/production";
 import { fetchComerceByYear } from "./services/comerce";
 import { fetchImportsByYear } from "./services/imports";
 import { fetchExportsByYear } from "./services/exports";
+import { fetchProcessingByYear } from "./services/processing";
 import "./App.css";
 
 const App = () => {
@@ -11,7 +12,6 @@ const App = () => {
     <div className="container">
       <h1>Consulta aos dados da Embrapa</h1>
 
-      {/* Configuração das Abas */}
       <Tabs
         tabs={[
           {
@@ -20,7 +20,7 @@ const App = () => {
               <Section
                 title="Buscar Produção por Ano"
                 inputs={[
-                  { name: "year", placeholder: "Digite o ano", type: "number" } // Input para ano
+                  { name: "year", placeholder: "Digite o ano", type: "number" } 
                 ]}
                 handler={fetchProductionByYear}
               />
@@ -44,7 +44,7 @@ const App = () => {
                     ],
                   },
                 ]}
-                handler={fetchComerceByYear}
+                handler={fetchProcessingByYear}
               />
             ),
           },
@@ -54,7 +54,7 @@ const App = () => {
               <Section
                 title="Buscar Comercialização por Ano"
                 inputs={[
-                  { name: "year", placeholder: "Digite o ano", type: "number" } // Input para ano
+                  { name: "year", placeholder: "Digite o ano", type: "number" } 
                 ]}
                 handler={fetchComerceByYear}
               />
@@ -89,7 +89,7 @@ const App = () => {
               <Section
                 title="Buscar Produção por Ano"
                 inputs={[
-                  { name: "year", placeholder: "Digite o ano", type: "number" }, // Input para ano
+                  { name: "year", placeholder: "Digite o ano", type: "number" }, 
                   {
                     name: "classification",
                     type: "select",

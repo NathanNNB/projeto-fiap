@@ -7,7 +7,6 @@ const Tabs = ({ tabs }) => {
 
   return (
     <div>
-      {/* Navegação das Abas */}
       <div className="tabs">
         {tabs.map((tab, index) => (
           <button
@@ -20,7 +19,6 @@ const Tabs = ({ tabs }) => {
         ))}
       </div>
 
-      {/* Conteúdo da Aba Ativa */}
       <div className="tab-content">{tabs[activeTab].content}</div>
     </div>
   );

@@ -17,19 +17,26 @@ def getProcessing():
     params = PROCESSING_PARAM
 
     year = request.args.get('year', default='', type=str)
+    classification = request.args.get('classification', default='', type=str)
+    if year or classification:
+        processingURL = f"{processingURL}?"
+
     if year:
         if 1970 < int(year) > 2023:
             return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
-        yearParameter = f"?ano={year}"
+        yearParameter = f"ano={year}&"
         processingURL = f"{processingURL}{yearParameter}"
         params = f"{params}{year}"
 
+    if classification: 
+        classificationParameter = f"subopcao={classification}&"
+        processingURL= f"{processingURL}{classificationParameter}"
+        params = f"{params}{classification}"
 
-    processingURL = f"{processingURL}&{PROCESSING_PARAM}" 
-    
+    processingURL = f"{processingURL}{PROCESSING_PARAM}" 
     data = scrape_page(processingURL, params)
     if "error" in data:
         return data
-    print(data)
     return jsonify({"message": str(data)})
+
 

@@ -1,25 +1,16 @@
-/* 
-  1) Define CSS variables for colors, spacing, etc.
-  2) Provide default (light) values.
-  3) Create a .dark-theme class to override those variables.
-*/
 
-/* Reset básico para remover margens e padding padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ====================== */
-/* Default (Light) Theme  */
-/* ====================== */
 
 :root {
   /* Colors */
-  --body-bg-color: #f1f1f1;      /* fundo suave */
-  --text-color: #333;            /* texto principal */
-  --container-bg: #fff;          /* fundo do container */
+  --body-bg-color: #f1f1f1;      
+  --text-color: #333;            
+  --container-bg: #fff;          
   --container-shadow: rgba(0, 0, 0, 0.1);
 
   --button-bg: #007bff;
@@ -39,14 +30,6 @@
   --pre-border-color: #ddd;
 }
 
-/* ====================== */
-/* Dark Theme Overrides   */
-/* ====================== */
-
-/* 
-  Use a class name like .dark-theme on <body> or any container 
-  to switch variables to dark mode.
-*/
 .dark-theme {
   --body-bg-color: #1e1e1e;
   --text-color: #ccc;
@@ -70,7 +53,6 @@
   --pre-border-color: #444;
 }
 
-/* Global body styles */
 body {
   font-family: Arial, sans-serif;
   background-color: var(--body-bg-color);
@@ -78,7 +60,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Container principal */
 .container {
   width: 90%;
   max-width: 1024px;
@@ -90,13 +71,11 @@ body {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Título */
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Botões */
 button {
   background-color: var(--button-bg);
   color: var(--button-text-color);
@@ -113,7 +92,6 @@ button:hover {
   background-color: var(--button-hover-bg);
 }
 
-/* Input */
 input[type="text"] {
   width: 100%;
   padding: 8px;
@@ -125,7 +103,6 @@ input[type="text"] {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Mensagens de resultado e erro */
 .message {
   margin-top: 16px;
   padding: 10px;
@@ -142,7 +119,6 @@ input[type="text"] {
   color: var(--message-error-text);
 }
 
-/* Tabela ou bloco de JSON */
 pre {
   background-color: var(--pre-bg);
   padding: 12px;

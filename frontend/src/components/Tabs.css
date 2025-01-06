@@ -1,4 +1,4 @@
-/* Container das abas */
+
 .tabs {
     display: flex;
     border-bottom: 2px solid #444;
@@ -7,7 +7,6 @@
     border-radius: 8px 8px 0 0;
   }
   
-  /* Botões das abas */
   .tab-button {
     flex: 1;
     padding: 10px;
@@ -22,19 +21,16 @@
     transition: all 0.3s ease;
   }
   
-  /* Aba ativa */
   .tab-button.active {
     background-color: #222;
     border-bottom: 2px solid #00bcd4;
     color: #00bcd4;
   }
   
-  /* Hover das abas */
   .tab-button:hover {
     background-color: #555;
   }
   
-  /* Conteúdo das abas */
   .tab-content {
     padding: 20px;
     background-color: #222;
@@ -44,7 +40,6 @@
     color: #ddd;
   }
   
-  /* Ajustando o texto no conteúdo */
   .tab-content pre {
     font-size: 13px;
     color: #aaa;
