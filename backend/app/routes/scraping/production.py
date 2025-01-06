@@ -8,7 +8,7 @@ PRODUCTION_PARAM = 'opcao=opt_02'
 production = Blueprint('production', __name__)
 
 @production.route('/api/production/', methods=['GET'])
-def getProducao():
+def getProduction():
     productionURL = URL
     params = PRODUCTION_PARAM
 
@@ -22,7 +22,7 @@ def getProducao():
 
 
     productionURL = f"{productionURL}&{PRODUCTION_PARAM}" 
-    
+    print(productionURL)
     data = scrape_page(productionURL, params)
     if "error" in data:
         return data

@@ -5,11 +5,7 @@ IMPORTS_PARAM = 'opcao=opt_05'
 
 imports = Blueprint('imports', __name__)
 
-@imports.route('/api/imports', methods=['GET'])
-def hello():
-    return jsonify({"message": "Olá, imports!"})
-
 @imports.route('/api/imports/imports', methods=['GET'])
-def getProducao():
+def getImports():
     return jsonify({"message": "imports"})
 

@@ -8,7 +8,7 @@ COMERCE_PARAM = 'opcao=opt_04'
 comerce = Blueprint('comerce', __name__)
 
 @comerce.route('/api/comerce/', methods=['GET'])
-def getProducao():
+def getComerce():
     comerceURL = URL
     params = COMERCE_PARAM
 

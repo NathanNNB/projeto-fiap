@@ -6,10 +6,6 @@ URL = "http://vitibrasil.cnpuv.embrapa.br/index.php"
 
 main = Blueprint('main', __name__)
 
-@main.route('/', methods=['GET'])
-
-def index():
-    return "Olá, este é o endpoint raiz!"
 
 @main.route('/api/hello', methods=['GET'])
 @swag_from({
@@ -32,7 +28,7 @@ def hello():
     return jsonify({"message": "Olá, Flask!"})
 
 @main.route('/api/processing', methods=['GET'])
-def getProducao():
+def getProcessing():
     url = URL
     if not url:
         return jsonify({'error': 'Missing URL'}), 400

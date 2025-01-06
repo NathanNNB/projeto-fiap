@@ -1,11 +1,8 @@
 import Section from "./components/Section";
 import Tabs from "./components/Tabs"; // Importa o componente Tabs
-import {
-  fetchProductionByYear,
-} from "./services/production";
-import {
-  fetchComerceByYear,
-} from "./services/comerce";
+import { fetchProductionByYear } from "./services/production";
+import { fetchComerceByYear } from "./services/comerce";
+import { fetchImportsByYear } from "./services/imports";
 import "./App.css";
 
 const App = () => {
@@ -81,7 +78,7 @@ const App = () => {
                     ],
                   },
                 ]}
-                handler={fetchProductionByYear}
+                handler={fetchImportsByYear}
               />
             ),
           },

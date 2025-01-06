@@ -5,11 +5,7 @@ EXPORTS_PARAM = 'opcao=opt_06'
 
 exports = Blueprint('exports', __name__)
 
-@exports.route('/api/exports', methods=['GET'])
-def hello():
-    return jsonify({"message": "Olá, exports!"})
-
 @exports.route('/api/exports/exports', methods=['GET'])
-def getProducao():
+def getExports():
     return jsonify({"message": "exports"})
 
