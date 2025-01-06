@@ -14,24 +14,25 @@ def getImports():
 
     year = request.args.get('year', default='', type=str)
     classification = request.args.get('classification', default='', type=str)
+    if year or classification:
+        importsURL = f"{importsURL}?"
 
     if year:
         if 1970 < int(year) > 2023:
             return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
-        yearParameter = f"?ano={year}"
+        yearParameter = f"ano={year}&"
         importsURL = f"{importsURL}{yearParameter}"
         params = f"{params}{year}"
 
     if classification: 
-        classificationParameter = f"?subopcao={classification}"
+        classificationParameter = f"subopcao={classification}&"
         importsURL= f"{importsURL}{classificationParameter}"
         params = f"{params}{classification}"
 
-    importsURL = f"{importsURL}&{IMPORTS_PARAM}" 
-    
+    importsURL = f"{importsURL}{IMPORTS_PARAM}" 
     data = scrape_page(importsURL, params)
     if "error" in data:
         return data
-    print(data)
     return jsonify({"message": str(data)})
+
 
