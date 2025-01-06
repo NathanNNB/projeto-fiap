@@ -16,12 +16,12 @@ def getComerce():
     if year:
         if 1970 < int(year) > 2023:
             return jsonify({"message": "Invalid Year, use a value between 1970 and 2023"})
-        yearParameter = f"?ano={year}"
+        yearParameter = f"?ano={year}&"
         comerceURL = f"{comerceURL}{yearParameter}"
         params = f"{params}{year}"
 
 
-    comerceURL = f"{comerceURL}?{COMERCE_PARAM}" 
+    comerceURL = f"{comerceURL}{COMERCE_PARAM}" 
     
     data = scrape_page(comerceURL, params)
     if "error" in data:
