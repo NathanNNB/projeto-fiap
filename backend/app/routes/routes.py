@@ -1,8 +1,12 @@
 from flask import Blueprint, jsonify
 from flasgger import swag_from
 from app.services.scraping_service import scrape_page
+from dotenv import load_dotenv
+import os
 
-URL = "http://vitibrasil.cnpuv.embrapa.br/index.php?"
+load_dotenv()
+
+URL = os.getenv("BASE_URL")
 
 main = Blueprint('main', __name__)
 
