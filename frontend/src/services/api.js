@@ -1,12 +1,8 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL
+
 export const API = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api', 
+  baseURL,
 });
 
-export const fetchHello = async (query) => {
-  const response = await API.get('/production/production', {
-    params: { year: query },
-  });
-  return response.data;
-};
