@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Section.css" ;
-import JsonTable from "./JSONTable";
+import JsonTable from "./JsonTable";
 const Section = ({ title, inputs = [], handler }) => {
   const [formData, setFormData] = useState(
     inputs.reduce((acc, input) => ({ ...acc, [input.name]: "" }), {})
