@@ -23,7 +23,7 @@ project/ ├── backend/ │ ├── app/ │ │ └── ... │ ├─�
     
     pip install -r requirements.txt
     python run.py
-Flask should be available at http://127.0.0.1:5000.
+Flask should be available at http://127.0.0.1:5000 (locally) or https://projeto-fiap.onrender.com/
 
 ### 2. Frontend (React)
 
@@ -33,7 +33,7 @@ Flask should be available at http://127.0.0.1:5000.
     yarn install
     yarn run dev
 
-React should be available at http://127.0.0.1:5173.
+React should be available at http://127.0.0.1:5173 (locally) or https://projeto-fiap-coral.vercel.app/
 
 Usage
 Access http://127.0.0.1:5173 for the React app.
@@ -43,8 +43,7 @@ It communicates with the Flask API at http://127.0.0.1:5000.
 
 The Flask API exposes the following endpoints by default (examples):
 
-GET /api/hello
-POST /api/data
+GET /api/production
 
 ### 4. Swagger
 
