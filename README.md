@@ -1,6 +1,10 @@
 # Flask + React Full Stack Project
 
-A simple full-stack application featuring a **Flask** backend and a **React** frontend.
+Este projeto demonstra um aplicativo que combina Flask e React para fornecer funcionalidades relacionadas a dados de vinhos, com APIs para scraping e análise
+
+### Resource 
+
+http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01
 
 ## Project Structure
 project/ ├── backend/ │ ├── app/ │ │ └── ... │ ├── requirements.txt │ ├── run.py │ └── venv/ └── frontend/ ├── package.json ├── vite.config.js └── src/ └── ...
@@ -23,6 +27,7 @@ project/ ├── backend/ │ ├── app/ │ │ └── ... │ ├─�
     
     pip install -r requirements.txt
     python run.py
+
 Flask should be available at http://127.0.0.1:5000 (locally) or https://projeto-fiap.onrender.com/
 
 ### 2. Frontend (React)
@@ -35,16 +40,11 @@ Flask should be available at http://127.0.0.1:5000 (locally) or https://projeto-
 
 React should be available at http://127.0.0.1:5173 (locally) or https://projeto-fiap-coral.vercel.app/
 
-Usage
-Access http://127.0.0.1:5173 for the React app.
-It communicates with the Flask API at http://127.0.0.1:5000.
-
-### 3. Endpoints
+### 3. Main Endpoints
 
 https://projeto-fiap-coral.vercel.app/ - Frontend 
 
 https://projeto-fiap.onrender.com/ - Backend 
-
 
 ### 4. Swagger
 
@@ -56,22 +56,33 @@ This project includes **Swagger (OpenAPI)** documentation using [Flasgger](https
 Start the Flask app (e.g., python run.py).
 
 Open your browser and visit:
-http://127.0.0.1:5000/apidocs or https://projeto-fiap.onrender.com/apidocs
+http://127.0.0.1:5000/apidocs (locally) or https://projeto-fiap.onrender.com/apidocs
+
+-Specifc Endpoints
+
+Comerce Wine Scraping (/api/comerce/) 
+  - Método: GET
+  - Parâmetros: ano (opcional)
+  - Retorno: JSON com dados de comercialização de vinhos
+
+Exports Wine Scraping (/api/exports/) 
+  - Método: GET
+  - Parâmetros: ano (opcional) e categoria(opcional)
+  - Retorno: JSON com dados de exportação de vinhos
+
+Imports Wine Scraping (/api/imports/) 
+  - Método: GET
+  - Parâmetros: ano (opcional) e categoria(opcional)
+  - Retorno: JSON com dados de importação de vinhos
 
 
+Processing Wine Scraping (/api/processing/) 
+  - Método: GET
+  - Parâmetros: ano (opcional) e categoria(opcional)
+  - Retorno: JSON com dados de processamento de vinhos
 
-#### Swagger Endpoints Available at 
-
-Comerce Wine Scraping (/api/comerce/) - Endpoint com ano como parâmetro opcional que retorna informações de comercialização dos vinhos
-
-Exports Wine Scraping (/api/exports/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de exportação dos vinhos
-
-Imports Wine Scraping (/api/imports/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de importação dos vinhos
-
-Processing Wine Scraping (/api/processing/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de processamento dos vinhos
-
-Production Wine Scraping (/api/production/) - Endpoint com ano como parâmetro opcional que retorna informações de produção dos vinhos
-
-### Resource 
-
-http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01
+Production Wine Scraping (/api/production/) 
+  - Método: GET
+  - Parâmetros: ano (opcional)
+  - Retorno: JSON com dados de produção de vinhos
+  
