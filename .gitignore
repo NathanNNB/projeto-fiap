@@ -4,3 +4,5 @@ venv/
 env/
 __pycache__/
 *.py[cod]
+.env.development
+.env.production
