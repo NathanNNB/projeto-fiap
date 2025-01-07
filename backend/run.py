@@ -4,7 +4,7 @@ from app.routes import create_app
 from flask_cors import CORS
 
 app = create_app()
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": "https://projeto-fiap-coral.vercel.app"}})
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))  # Porta definida pela Render
