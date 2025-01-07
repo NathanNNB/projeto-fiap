@@ -41,9 +41,10 @@ It communicates with the Flask API at http://127.0.0.1:5000.
 
 ### 3. Endpoints
 
-The Flask API exposes the following endpoints by default (examples):
+https://projeto-fiap-coral.vercel.app/ - Frontend 
 
-GET /api/production
+https://projeto-fiap.onrender.com/ - Backend 
+
 
 ### 4. Swagger
 
@@ -55,7 +56,21 @@ This project includes **Swagger (OpenAPI)** documentation using [Flasgger](https
 Start the Flask app (e.g., python run.py).
 
 Open your browser and visit:
-http://127.0.0.1:5000/apidocs
+http://127.0.0.1:5000/apidocs or https://projeto-fiap.onrender.com/apidocs
+
+
+
+#### Swagger Endpoints Available at 
+
+Comerce Wine Scraping (/api/comerce/) - Endpoint com ano como parâmetro opcional que retorna informações de comercialização dos vinhos
+
+Exports Wine Scraping (/api/exports/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de exportação dos vinhos
+
+Imports Wine Scraping (/api/imports/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de importação dos vinhos
+
+Processing Wine Scraping (/api/processing/) - Endpoint com ano e categoria como parâmetros opcionais que retorna informações de processamento dos vinhos
+
+Production Wine Scraping (/api/production/) - Endpoint com ano como parâmetro opcional que retorna informações de produção dos vinhos
 
 ### Resource 
 
