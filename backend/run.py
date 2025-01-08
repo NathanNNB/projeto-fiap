@@ -12,7 +12,7 @@ def enforce_https_in_production():
         url = request.url.replace("http://", "https://", 1)
         app.logger.info(f"Requisição recebida: {request.url}")
         app.logger.info(f"Requisição final: {request.url}")
-        app.logger.info("getEnv FLASK ENV:" + {os.getenv("FLASK_ENV")})
+        app.logger.info("getEnv FLASK ENV:" + os.getenv("FLASK_ENV"))
         app.logger.info(f"request.is_secure: {request.is_secure}")
         return redirect(url, code=301)
 
