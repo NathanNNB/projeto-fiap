@@ -7,9 +7,16 @@ app = create_app()
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.before_request
+def enforce_https():
+    # Always redirect HTTP to HTTPS in all environments
+    if request.url.startswith("http://"):
+        url = request.url.replace("http://", "https://", 1)
+        return redirect(url, code=308)
+
+@app.before_request
 def enforce_https_in_production():
+    # Additional check for proxies in production
     if os.getenv("FLASK_ENV") == "production":
-        # Verifica se o cabeçalho enviado pelo Render indica HTTPS
         if request.headers.get("X-Forwarded-Proto", "http") != "https":
             url = request.url.replace("http://", "https://", 1)
             return redirect(url, code=301)
