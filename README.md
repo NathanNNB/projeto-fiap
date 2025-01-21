@@ -45,12 +45,12 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
    ```
 - **Frontend:**
   
-  1. Vá para a pasta 'frontend'
+1. Vá para a pasta 'frontend'
      ```
      bash
      cd ../frontend
      ```
-  2. Realize a instalação e a execução do yarn
+2. Realize a instalação e a execução do yarn
      ```
      yarn install
      yarn run dev
