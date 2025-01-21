@@ -1,7 +1,9 @@
+# Projeto de API para consulta aos dados do Embrapa
+##### Nathan Novais - 
+##### William Brandão - 360387
 ### Descrição do Projeto
 
 Este projeto apresenta um aplicativo que integra as tecnologias Flask e React para oferecer funcionalidades avançadas relacionadas a dados de vinhos coletados do site da Embrapa. Por meio de endpoints que realizam scraping e análise de dados, a aplicação proporciona uma extração personalizada, flexível e eficiente de informações vitivinícolas, realizando buscas gerais ou aceitando parâmetros opcionais como ano e categoria. Sorbe a estrutura dessa API, o projeto está hospedado no Vercel para o front-end e no Render para o back-end.
-
 ### Links Úteis
 
 - **Site da Embrapa: http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01**
@@ -11,8 +13,7 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
 
 ### Estrutura do Projeto
 #### Diagrama:
-![Diagrama em branco (1)](https://github.com/user-attachments/assets/effda8a5-569b-407d-853f-3c6bd32e20f6)
-
+![Diagrama em branco (1)](https://github.com/user-attachments/assets/5b894be2-9231-46c4-9367-8aab9e2d3a37)
 #### Requisitos:
 
 - **Python 3.8+**  
