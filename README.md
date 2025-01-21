@@ -35,6 +35,12 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
   - Parâmetros: ano (opcional)
   - Retorno: JSON com dados de comercialização de vinhos
 
+Exemplo requisição dados de 2020:
+![request_commerce](https://github.com/user-attachments/assets/3272d9a9-8b5c-4ce4-a5c5-590e8a896a25)
+
+Exemplo retorno dados de 2020:
+![retorno_commerce](https://github.com/user-attachments/assets/152f29f0-e3c4-46e1-823a-1757f93a644e)
+
 #### Exports Wine Scraping (/api/exports/) 
   - Método: GET
   - Parâmetros: ano (opcional) e categoria(opcional)
