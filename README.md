@@ -4,14 +4,12 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
 
 ### Links Úteis
 
-Site da Embrapa: http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01
-Frontend: https://projeto-fiap-coral.vercel.app/
-Backend: https://projeto-fiap.onrender.com/
-Swagger: https://projeto-fiap.onrender.com/apidocs
+- **Site da Embrapa: http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01**
+- **Frontend: https://projeto-fiap-coral.vercel.app/**
+- **Backend: https://projeto-fiap.onrender.com/**
+- **Swagger: https://projeto-fiap.onrender.com/apidocs**
 
 ### Estrutura do Projeto
-
-
 
 #### Diagrama
 
