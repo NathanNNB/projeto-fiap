@@ -10,9 +10,7 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
 - **Swagger: https://projeto-fiap.onrender.com/apidocs**
 
 ### Estrutura do Projeto
-
 #### Diagrama:
-
 ![Diagrama em branco (1)](https://github.com/user-attachments/assets/effda8a5-569b-407d-853f-3c6bd32e20f6)
 
 #### Requisitos:
