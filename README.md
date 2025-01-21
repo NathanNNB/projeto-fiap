@@ -36,7 +36,7 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
   - Retorno: JSON com dados de comercialização de vinhos
 
 Exemplo requisição dados de 2020:
-´´´https://projeto-fiap.onrender.com/api/comerce/?year=2020´´´
+```https://projeto-fiap.onrender.com/api/comerce/?year=2020```
 ![request_commerce](https://github.com/user-attachments/assets/3272d9a9-8b5c-4ce4-a5c5-590e8a896a25)
 
 Exemplo retorno dados de 2020:
