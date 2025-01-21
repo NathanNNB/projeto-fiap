@@ -18,9 +18,31 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
 #### Requisitos
 
 - **Python 3.8+**  
-- **Node.js 14+**  
+- **Node.js 20+**  
 - **npm** or **yarn**
 
+#### Como iniciar a aplicação
+
+- **Backend:**
+
+1. Vá para a pasta backend:
+   ```
+   bash
+   cd backend
+   ```
+2. Crie e ative um ambiente virtual:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # (Linux/Mac) or .\venv\Scripts\activate (Windows)
+   ```
+4. Instale os requisitos:
+   ```
+   pip install -r requirements.txt
+   ```
+6. inicie o arquivo 'run.py' pelo Python:
+   ```
+   python run.py
+   ```
 
 ##### Códigos de Status HTTP:
 
