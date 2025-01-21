@@ -10,23 +10,25 @@ Backend: https://projeto-fiap.onrender.com/
 Swagger: https://projeto-fiap.onrender.com/apidocs
 
 ### Estrutura do Projeto
-project/ ├── backend/ │ ├── app/ │ │ └── ... │ ├── requirements.txt │ ├── run.py │ └── venv/ └── frontend/ ├── package.json ├── vite.config.js └── src/ └── ...
 
-### Requisitos
+
+
+#### Diagrama
+
+![Diagrama em branco (1)](https://github.com/user-attachments/assets/effda8a5-569b-407d-853f-3c6bd32e20f6)
+
+#### Requisitos
 
 - **Python 3.8+**  
 - **Node.js 14+**  
 - **npm** or **yarn**
 
-### Diagrama e Observações
 
-![Diagrama em branco (1)](https://github.com/user-attachments/assets/effda8a5-569b-407d-853f-3c6bd32e20f6)
+##### Códigos de Status HTTP:
 
-#### Códigos de Status HTTP:
-
-200 OK: Requisição bem sucedida
-400 Bad Request: A requisição está incorreta em seus valores.
-500 Internal Server Error: Ocorreu um erro interno no servidor, não foi possível conectar ao site da Embrapa.
+- **200 OK: Requisição bem sucedida**
+- **400 Bad Request: A requisição está incorreta em seus valores.**
+- **500 Internal Server Error: Ocorreu um erro interno no servidor, não foi possível conectar ao site da Embrapa.**
 
 ### Endpoints
 
