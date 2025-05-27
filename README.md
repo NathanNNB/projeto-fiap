@@ -13,7 +13,8 @@ Este projeto apresenta um aplicativo que integra as tecnologias Flask e React pa
 
 ### Estrutura do Projeto
 #### Diagrama:
-![Diagrama em branco (1)](https://github.com/user-attachments/assets/5b894be2-9231-46c4-9367-8aab9e2d3a37)
+![fiap-3 drawio (1)](https://github.com/user-attachments/assets/10194a51-5b53-46c7-910a-2d4ee6b9b8bf)
+
 #### Requisitos:
 
 - **Python 3.8+**  
